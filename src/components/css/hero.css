@@ -1,0 +1,121 @@
+/* Hero.css */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    flex-direction: row;
+    gap: 60px;
+    opacity: 0;
+    transform: scale(0.9); /* Subtle zoom-in */
+    animation: fadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .hero-content {
+    text-align: left;
+    animation: slideInLeft 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  
+  @keyframes slideInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .hero-image {
+    max-width: 40%;
+    text-align: right;
+    animation: slideInRight 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  
+  @keyframes slideInRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: 550px;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .hero-image img:hover {
+    transform: scale(1.1) rotate(3deg); 
+  }
+  
+  .hero-content h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 4em;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+  
+  .hero-content p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4em;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .btn23 a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .btn23 {
+    border-radius: 30px;
+    padding: 15px 30px;
+    background-color: black;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .btn23:hover {
+    transform: translateY(-5px); 
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+      padding: 30px;
+    }
+  
+    .hero-content {
+      text-align: center;
+    }
+  
+    .hero-image {
+      max-width: 90%;
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+    .hero-content h2 {
+      font-size: 3em;
+      line-height: 1.2;
+    }
+  
+    .hero-content p {
+      font-size: 1.2em;
+    }
+  }
